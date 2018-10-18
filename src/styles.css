@@ -1,0 +1,220 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+h1 {
+  font-size: 120px;
+}
+button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  background: #999;
+  margin: 0px 10px;
+  border: none;
+  outline-style: none;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  transform: scale(0.95);
+  font-size: 14px;
+  transform-origin: 50% 70%;
+  padding: 15px;
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 10px;
+  width: 5px;
+  height: 20px;
+  border: solid white;
+  border-width: 0 3px 0 0;
+}
+button:after {
+  position: absolute;
+  content: "";
+  left: 16px;
+  top: 8px;
+  width: 5px;
+  height: 20px;
+  border: solid white;
+  border-width: 0 3px 0 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(90deg);
+}
+button:hover {
+  opacity: 0.8;
+  transform: scale(1);
+}
+button:active {
+  transform: scale(0.95);
+}
+button.green {
+  background: rgb(57, 185, 6);
+}
+button.red {
+  background: rgb(253, 64, 64);
+}
+.Item {
+  text-align: right;
+  margin: 20px 10px;
+  padding-right: calc(50% - 160px);
+}
+
+.Item li,
+input {
+  display: inline;
+  margin: 20px 10px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  outline-style: none;
+}
+
+@media (max-width: 768px) {
+  .Item {
+    margin: 20px 0;
+  }
+  .Item li {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .Item {
+    padding: 0;
+  }
+}
+
+input {
+  border: 2px solid #f1f3f4;
+  user-select: none;
+}
+
+ul {
+  padding: 0;
+}
+
+.Item button {
+  height: 20px;
+  width: 20px;
+  margin: 10px 50px;
+  position: relative;
+  padding: 5px;
+  opacity: 0;
+}
+
+@media (max-width: 360px) {
+  .Item button {
+    margin: 10px 30px;
+  }
+}
+
+.Item:hover li ~ button {
+  opacity: 1;
+}
+
+.Item li.disabled {
+  text-decoration: line-through;
+  color: #999;
+}
+.Item button:before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 3px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.Item button:after {
+  position: absolute;
+  content: "";
+  left: 6px;
+  top: 4px;
+  width: 3px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 0 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.container {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 17px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  transition: all 0.1s ease;
+  transform: scale(0.95);
+  transform-origin: 50% 70%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+  transform: scale(1);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after,
+.checkmark:before {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after,
+.container input:checked ~ .checkmark:before {
+  display: inline-block;
+}
+
+/* Style the checkmark/indicator */
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
