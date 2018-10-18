@@ -38,8 +38,8 @@ class App extends Component {
     const { todo } = this.state;
     return (
       <div className="App">
-        <h2>Hello!</h2>
-        <p>Welcome to my todo list.</p>
+        <h2>Todo list</h2>
+        <p>Made by Gabriel Dierks.</p>
         <form onSubmit={event => this.handleSubmit(event)}>
           <input
             type="text"
